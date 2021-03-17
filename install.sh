@@ -19,6 +19,14 @@ wget https://github.com/cli/cli/releases/download/v1.7.0/gh_1.7.0_linux_386.tar.
 tar -xvf gh_1.7.0_linux_386.tar.gz &> /dev/null
 mv gh_1.7.0_linux_386/bin/gh ${ODH_DIR} &> /dev/null
 
+echo 'Installing OpenShift CLI (oc)'
+mkdir -p "/tmp/odh-client"
+cd "/tmp/odh-client" || exit
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz &> /dev/null
+tar -xvf openshift-client-linux.tar.gz &> /dev/null
+mv oc /opt/app-root/bin/oc &> /dev/null
+
+
 echo 'Cleaning up'
 rm -rf /tmp/odh-client
 
