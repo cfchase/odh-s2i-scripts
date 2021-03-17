@@ -20,12 +20,18 @@ Initializes and creates a new repository in GitHub.
 odh new-repo <repo_directory>
 ```
 
+#### Log in to OpenShift
+To use any of the commands, you must be logged into OpenShift.  Your token can be found in the OpenShift web console in your User Profile -> Copy Login Command
+Full documentation [here](https://docs.okd.io/latest/cli_reference/openshift_cli/getting-started-cli.html#cli-logging-in_cli-developer-commands)
+```shell
+oc login --token=sha256~XYZ --server=https://api.my-cluster:6443
+```
+
 ## Create a new OpenShift application
 Creates a new OpenShift application (deployment, service, buildconfig, imagestream, route) for model serving from the GitHub repo in a directory (`<repo-directory>`) in an OpenShift project (`<oc-project>`).
 
 You must be logged into the OpenShift cluster using `oc login` using either username and password or a token. Full documentation [here](https://docs.okd.io/latest/cli_reference/openshift_cli/getting-started-cli.html#cli-logging-in_cli-developer-commands)
 ```shell
-oc login --token=sha256~XYZ --server=https://api.my-cluster:6443
 odh new-app <repo-directory> <oc-project>
 ```
 
@@ -34,7 +40,6 @@ Creates a new OpenShift application deployments created using this tool.
 
 You must be logged into the OpenShift cluster using `oc login` using either username and password or a token. Full documentation [here](https://docs.okd.io/latest/cli_reference/openshift_cli/getting-started-cli.html#cli-logging-in_cli-developer-commands)
 ```shell
-oc login --token=sha256~XYZ --server=https://api.my-cluster:6443
 odh list-apps
 ```
 
