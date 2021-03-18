@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 new_project () {
-  cookiecutter https://github.com/rh-aiservices-bu/odh-s2i-project-cookiecutter --checkout simple
+  cookiecutter https://github.com/opendatahub-io/odh-s2i-project-cookiecutter --checkout simple
 }
 
 new_repo () {
